@@ -1,4 +1,4 @@
-package de.fh.albsig.app;
+package de.fh.albsig.weatherapp;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;

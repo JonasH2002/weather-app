@@ -1,4 +1,4 @@
-package de.fh.albsig.app;
+package de.fh.albsig.weatherapp;
 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

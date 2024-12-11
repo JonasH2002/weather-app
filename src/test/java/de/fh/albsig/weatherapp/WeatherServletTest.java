@@ -1,4 +1,4 @@
-package de.fh.albsig.app;
+package de.fh.albsig.weatherapp;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
@@ -34,7 +34,7 @@ class WeatherServletTest {
 
   @Test
   void testDoGetWithValidLocation() throws Exception {
-    // Mock WeatherRepository und Servlet I/O
+    // Arrange
     WeatherData mockData = new WeatherData();
     mockData.setLocation("Berlin");
     mockData.setTemperature(15.0);
@@ -105,7 +105,6 @@ class WeatherServletTest {
     mockData.setTemperature(16);
     mockData.setHumidity(70);
 
-    // Mock-Setup
     when(request.getReader()).thenReturn(new BufferedReader(new StringReader(validXml)));
 
     StringWriter responseWriter = new StringWriter();
@@ -190,7 +189,6 @@ class WeatherServletTest {
             </weatherData>
         """;
 
-    // Mock-Setup: Leser für die Anfrage
     when(request.getReader()).thenReturn(new BufferedReader(new StringReader(invalidXml)));
 
     // Act
@@ -222,7 +220,6 @@ class WeatherServletTest {
     expectedData.setTemperature(18.5);
     expectedData.setHumidity(30);
 
-    // Mock-Setup
     when(request.getReader()).thenReturn(new BufferedReader(new StringReader(validXml)));
 
     // Act

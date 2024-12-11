@@ -1,4 +1,4 @@
-package de.fh.albsig.app;
+package de.fh.albsig.weatherapp;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,4 +1,4 @@
-package de.fh.albsig.app;
+package de.fh.albsig.weatherapp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
