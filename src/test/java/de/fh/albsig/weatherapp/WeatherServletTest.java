@@ -162,6 +162,11 @@ class WeatherServletTest {
             </weatherData>
             """;
 
+    WeatherData mockData = new WeatherData();
+    mockData.setLocation("Berlin");
+    mockData.setTemperature(12);
+    mockData.setHumidity(70);
+
     when(request.getReader()).thenReturn(new BufferedReader(new StringReader(updateXml)));
 
     // Act
@@ -173,9 +178,9 @@ class WeatherServletTest {
             argThat(
                 data ->
                     data.getId() == 1L
-                        && data.getLocation().equals("Berlin")
-                        && data.getTemperature() == 12.0
-                        && data.getHumidity() == 70));
+                        && data.getLocation().equals(mockData.getLocation())
+                        && data.getTemperature() == mockData.getTemperature()
+                        && data.getHumidity() == mockData.getHumidity()));
     verify(response).setStatus(HttpServletResponse.SC_NO_CONTENT);
   }
 
